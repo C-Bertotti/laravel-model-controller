@@ -5,6 +5,18 @@
 @endsection
 
 @section('content')
+    <!-- se ci sono errori nella compilazione li visualizzo -->
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <!-- form per la creazione di un dato  -->
     <form action="{{route('movies.store')}}" method="POST">
         @method('POST')
         @csrf

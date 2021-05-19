@@ -18,6 +18,7 @@ class CreateMoviesTable extends Migration
             $table->string('title', 100);
             $table->string('author', 50);
             $table->string('genre', 30);
+            $table->year('year');
             $table->text('plot');
             $table->timestamps();
         });

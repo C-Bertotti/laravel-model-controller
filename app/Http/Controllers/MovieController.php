@@ -36,6 +36,18 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
+        $year = date('Y') + 1;
+
+        $request->validate([
+            'title' => 'required|string|max:100',
+            'author' => 'required|string|max:50',
+            'genre' => 'required|string|max:30',
+            'plot' => 'required|string',
+            'year' => 'required|min:1900|max:' . $year,
+        ]);
+
+        
+
         $data =$request->all();
 
         //creo una nuova istanza
