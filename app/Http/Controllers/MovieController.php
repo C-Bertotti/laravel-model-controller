@@ -43,7 +43,7 @@ class MovieController extends Controller
             'author' => 'required|string|max:50',
             'genre' => 'required|string|max:30',
             'plot' => 'required|string',
-            'year' => 'required|min:1900|max:' . $year,
+            'year' => 'required|numeric|min:1900|max:' . $year,
         ]);
 
         
