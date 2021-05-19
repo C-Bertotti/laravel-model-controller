@@ -4,9 +4,22 @@
     {{ $movie->title }}
 @endsection
 
+@section('filmYear')
+    {{ $movie->year }}
+@endsection
+
 @section('content')
-    <h2>{{ $movie->year }}</h2>
-    <p>{{ $movie->plot }}</p>
-    <a href="{{ route('movies.index') }}">Back</a>
+<div class="row mt-3">
+    <div class="col-3">
+        <img class="cover__image--show" src="{{ $movie->cover_image }}" alt="{{ $movie->title }}">
+    
+    </div>
+    <div class="col-9">
+        <p>{{ $movie->plot }}</p>
+    </div>    
+</div>
+<div class="text-right">
+    <a href="{{ route('movies.index') }}"><button type="button" class="btn btn-primary">Back</button></a>
+</div>
 @endsection
 

@@ -10007,3 +10007,8 @@ button.btn.actions {
   height: 40px;
   width: 40px;
 }
+
+img.cover__image--index {
+  height: 100px;
+  width: auto;
+}

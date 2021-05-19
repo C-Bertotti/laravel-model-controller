@@ -11,6 +11,7 @@
 <body>
     <div class="container mt-5 mb-5">
         <h1>@yield('pageTitle')</h1>
+        <h2>@yield('filmYear')</h2>
         @yield('content')
     </div>   
 </body>
