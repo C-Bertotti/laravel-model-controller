@@ -37,5 +37,11 @@
                 </tr>
             @endforeach
         </tbody>
-      </table>
+    </table>
+
+    @if (session('message'))
+        <div class="alert alert-success alert__messages">
+            {{ session('message') }}
+        </div>
+    @endif
 @endsection

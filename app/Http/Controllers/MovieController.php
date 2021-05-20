@@ -63,7 +63,7 @@ class MovieController extends Controller
 
         $movieNew->save();
 
-        return redirect()->route('movies.show', $movieNew);
+        return redirect()->route('movies.index')->with('message', 'Il film ' . $movieNew->title . ' è stato aggiunto');
 
     }
 
@@ -84,9 +84,9 @@ class MovieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Movie $movie)
     {
-        //
+        return view('movies.edit', compact('movie'));
     }
 
     /**
@@ -109,7 +109,11 @@ class MovieController extends Controller
      */
     public function destroy(Movie $movie)
     {
+        //metodo per eliminare l'istanza
         $movie->delete();
-        return redirect()->route('movies.index');
+
+        //faccio il rendirizzamento alla home e successivamente con il metodo with stampo il messaggio di avvenuta cancellazione
+        return redirect()->route('movies.index')->with('message', 'Il film ' . $movie->title . ' è stato eliminato');
+            //metodo with: il primo par è la chiave(id del messaggio) e il secondo il valore(testo del msg)
     }
 }

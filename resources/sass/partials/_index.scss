@@ -6,3 +6,9 @@ img.cover__image--index {
 td.column--action > * {
     display: inline-block;
 }
+
+.alert__messages {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
