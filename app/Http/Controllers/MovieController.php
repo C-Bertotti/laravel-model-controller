@@ -39,6 +39,7 @@ class MovieController extends Controller
         $year = date('Y') + 1;
 
         $request->validate([
+            'cover_image' => 'required|string',
             'title' => 'required|string|max:100',
             'author' => 'required|string|max:50',
             'genre' => 'required|string|max:30',
@@ -57,6 +58,8 @@ class MovieController extends Controller
         $movieNew->author = $data['author'];
         $movieNew->genre = $data['genre'];
         $movieNew->plot = $data['plot'];
+        $movieNew->cover_image = $data['cover_image'];
+
 
         $movieNew->save();
 

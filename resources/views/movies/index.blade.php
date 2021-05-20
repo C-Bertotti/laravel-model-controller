@@ -26,7 +26,14 @@
                     <td>{{ $movie->title }}</td>
                     <td>{{ $movie->author }}</td>
                     <td>{{ $movie->genre }}</td>
-                    <td><a href="{{ route('movies.show', ['movie' => $movie->id ] ) }}"><button type="button" class="btn btn-primary actions"><i class="fas fa-eye"></i></button></a></td>
+                    <td class="column--action">
+                        <a href="{{ route('movies.show', ['movie' => $movie->id ] ) }}"><button type="button" class="btn btn-primary actions"><i class="fas fa-eye"></i></button></a>
+                        <form action="{{route('movies.destroy', ['movie' => $movie->id ])}}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger actions"><i class="fas fa-trash-alt"></i></button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

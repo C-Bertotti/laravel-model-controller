@@ -10012,3 +10012,11 @@ img.cover__image--index {
   height: 100px;
   width: auto;
 }
+
+td.column--action > * {
+  display: inline-block;
+}
+
+img.cover__image--show {
+  width: 100%;
+}

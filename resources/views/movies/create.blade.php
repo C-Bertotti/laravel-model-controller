@@ -21,6 +21,10 @@
         @method('POST')
         @csrf
         <div class="form-group">
+            <label for="cover_image">Locandina</label>
+            <input type="text" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" name="cover_image" placeholder="Inserisci l'URL dell'immagine">
+        </div>
+        <div class="form-group">
             <label for="title">Titolo</label>
             <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Inserisci un titolo">
         </div>
