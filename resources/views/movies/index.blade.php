@@ -27,7 +27,8 @@
                     <td>{{ $movie->author }}</td>
                     <td>{{ $movie->genre }}</td>
                     <td class="column--action">
-                        <a href="{{ route('movies.show', ['movie' => $movie->id ] ) }}"><button type="button" class="btn btn-primary actions"><i class="fas fa-eye"></i></button></a>
+                        <a href="{{ route('movies.show', ['movie' => $movie->id ] ) }}"><button type="button" class="btn btn-secondary actions"><i class="fas fa-eye"></i></button></a>
+                        <a href="{{ route('movies.edit', ['movie' => $movie->id ] ) }}"><button type="button" class="btn btn-primary actions"><i class="fas fa-pen"></i></button></a>
                         <form action="{{route('movies.destroy', ['movie' => $movie->id ])}}" method="POST">
                             @method('DELETE')
                             @csrf

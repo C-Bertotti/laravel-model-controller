@@ -17,8 +17,8 @@
     @endif
 
     <!-- form per la creazione di un dato  -->
-    <form action="{{route('movies.store')}}" method="POST">
-        @method('POST')
+    <form action="{{route('movies.update', ['movie' => $movie->id])}}" method="POST">
+        @method('PUT')
         @csrf
         <div class="form-group">
             <label for="cover_image">Locandina</label>
@@ -49,8 +49,6 @@
                 @endfor
             </select>
         </div>
-
-        
         <button type="submit" class="btn btn-primary">Modifica</button>
     </form>
 @endsection
